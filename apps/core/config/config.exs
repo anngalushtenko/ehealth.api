@@ -348,4 +348,10 @@ config :kafka_ex,
   commit_threshold: 100,
   kafka_version: "1.1.0"
 
+config :kaffe,
+  producer: [
+    endpoints: [localhost: 9092],
+    topics: ["deactivate_declaration_events", "merge_legal_entities"]
+  ]
+
 import_config "#{Mix.env()}.exs"
