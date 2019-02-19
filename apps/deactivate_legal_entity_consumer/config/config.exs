@@ -7,5 +7,3 @@ config :kaffe,
     consumer_group: "deactivate_legal_entity_event_group",
     message_handler: Jobs.LegalEntityDeactivationJob
   ]
-
-import_config "#{Mix.env()}.exs"
