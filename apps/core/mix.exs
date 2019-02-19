@@ -57,7 +57,7 @@ defmodule Core.MixProject do
       {:translit, "~> 0.1.0"},
       {:mox, "~> 0.3", only: :test},
       {:kafka_ex, "~> 0.9.0"},
-      {:kaffe, "~> 1.0", git: "https://github.com/AlexKovalevych/kaffe.git"},
+      {:kaffe, "~> 1.0", git: "https://github.com/AlexKovalevych/kaffe.git", branch: "string_endpoints_sasl"},
       {:ex_machina, "~> 2.0", only: [:dev, :test]}
     ]
   end

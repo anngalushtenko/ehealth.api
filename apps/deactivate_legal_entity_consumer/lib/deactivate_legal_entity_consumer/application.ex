@@ -6,16 +6,11 @@ defmodule DeactivateLegalEntityConsumer.Application do
   use Application
 
   def start(_type, _args) do
-    Application.put_env(
-      :kaffe,
-      :consumer,
-      Application.get_env(:deactivate_legal_entity_consumer, :kaffe_consumer)
-    )
-
     children = [
       %{
-        id: Kaffe.Consumer,
-        start: {Kaffe.Consumer, :start_link, []}
+        id: Kaffe.GroupMemberSupervisor,
+        start: {Kaffe.GroupMemberSupervisor, :start_link, []},
+        type: :supervisor
       }
     ]
 
