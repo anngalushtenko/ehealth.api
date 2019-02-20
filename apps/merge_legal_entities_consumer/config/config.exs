@@ -7,3 +7,5 @@ config :kaffe,
     consumer_group: "merge_legal_entities_group",
     message_handler: Jobs.LegalEntityMergeJob
   ]
+
+import_config "#{Mix.env()}.exs"
