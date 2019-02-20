@@ -14,7 +14,7 @@ RUN mix do \
       local.rebar --force, \
       deps.get, \
       deps.compile, \
-      release --name="${APP_NAME}"
+      release --name=${APP_NAME}
 
 RUN git log --pretty=format:"%H %cd %s" > commits.txt
 
