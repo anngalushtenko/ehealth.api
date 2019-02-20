@@ -1,7 +1,7 @@
 use Mix.Config
 
-config :kaffe,
-  consumer: [
+config :merge_legal_entities_consumer,
+  kaffe_consumer: [
     endpoints: [localhost: 9092],
     topics: ["merge_legal_entities"],
     consumer_group: "merge_legal_entities_group",

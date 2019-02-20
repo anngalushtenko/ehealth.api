@@ -8,11 +8,12 @@ defmodule MergeLegalEntitiesConsumer.Application do
   def start(_type, _args) do
     children = [
       %{
-        id: Kaffe.GroupMemberSupervisor,
-        start: {Kaffe.GroupMemberSupervisor, :start_link, []},
-        type: :supervisor
+        id: Kaffe.Consumer,
+        start: {Kaffe.Consumer, :start_link, []}
       }
     ]
+
+    Application.put_env(:kaffe, :consumer, Application.get_env(:merge_legal_entities_consumer, :kaffe_consumer))
 
     opts = [strategy: :one_for_one, name: MergeLegalEntitiesConsumer.Supervisor]
     Supervisor.start_link(children, opts)
