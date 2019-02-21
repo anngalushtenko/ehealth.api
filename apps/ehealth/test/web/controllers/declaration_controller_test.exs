@@ -47,8 +47,8 @@ defmodule EHealth.Web.DeclarationControllerTest do
 
       expect(RPCWorkerMock, :run, fn "mpi",
                                      MPI.Rpc,
-                                     :get_persons_properties,
-                                     [~w(id first_name last_name second_name birth_date)a, %{"ids" => ids}] ->
+                                     :search_persons,
+                                     [%{"ids" => ids}, ~w(id first_name last_name second_name birth_date)a] ->
         get_rpc_persons(ids)
       end)
 
@@ -152,8 +152,8 @@ defmodule EHealth.Web.DeclarationControllerTest do
 
       expect(RPCWorkerMock, :run, fn "mpi",
                                      MPI.Rpc,
-                                     :get_persons_properties,
-                                     [~w(id first_name last_name second_name birth_date)a, %{"ids" => ids}] ->
+                                     :search_persons,
+                                     [%{"ids" => ids}, ~w(id first_name last_name second_name birth_date)a] ->
         get_rpc_persons(ids)
       end)
 
@@ -191,8 +191,8 @@ defmodule EHealth.Web.DeclarationControllerTest do
 
       expect(RPCWorkerMock, :run, fn "mpi",
                                      MPI.Rpc,
-                                     :get_persons_properties,
-                                     [~w(id first_name last_name second_name birth_date)a, %{"ids" => ids}] ->
+                                     :search_persons,
+                                     [%{"ids" => ids}, ~w(id first_name last_name second_name birth_date)a] ->
         get_rpc_persons(ids)
       end)
 
@@ -238,8 +238,8 @@ defmodule EHealth.Web.DeclarationControllerTest do
 
       expect(RPCWorkerMock, :run, fn "mpi",
                                      MPI.Rpc,
-                                     :get_persons_properties,
-                                     [~w(id first_name last_name second_name birth_date)a, %{"ids" => ids}] ->
+                                     :search_persons,
+                                     [%{"ids" => ids}, ~w(id first_name last_name second_name birth_date)a] ->
         get_rpc_persons(ids)
       end)
 

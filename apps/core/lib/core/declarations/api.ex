@@ -100,7 +100,7 @@ defmodule Core.Declarations.API do
   defp preload_persons(""), do: {:ok, []}
 
   defp preload_persons(ids),
-    do: Persons.get_persons_properties(ids, ~w(id first_name last_name second_name birth_date)a)
+    do: Persons.search_persons(%{"ids" => ids}, ~w(id first_name last_name second_name birth_date)a)
 
   defp put_related_id(list, id) do
     case Enum.member?(list, id) do

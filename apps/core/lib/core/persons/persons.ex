@@ -90,8 +90,8 @@ defmodule Core.Persons do
     end
   end
 
-  def get_persons_properties(ids, fields) do
-    with {:ok, persons} <- @rpc_worker.run("mpi", MPI.Rpc, :get_persons_properties, [fields, %{"ids" => ids}]) do
+  def search_persons(params, fields) do
+    with {:ok, persons} <- @rpc_worker.run("mpi", MPI.Rpc, :search_persons, [params, fields]) do
       {:ok, persons}
     else
       _ -> {:error, {:not_found, "Persons not found"}}
